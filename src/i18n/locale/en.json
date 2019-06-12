@@ -1,0 +1,29 @@
+{
+  "common": {
+    "ok": "OK",
+    "success": "success",
+    "send": "Send"
+  },
+  "auth": {
+    "offline": "Please check your Internet connection",
+    "signUp": "Sign up",
+    "signIn": "Sign in",
+    "enterName": "Enter your name",
+    "enterEmail": "Enter your email",
+    "enterPass": "Enter your password",
+    "changePass": "Change password",
+    "haveAccountLogIn": "Already have an account? Log in!",
+    "enterNewPass": "Enter new password",
+    "confirmPass": "Confirm password",
+    "passwordSuccessfullyChanged": "Password successfully changed",
+    "googleSignIn": "Google",
+    "facebookSignIn": "Facebook"
+  },
+  "tabBar": {
+    "home": "Home",
+    "settings": "Settings"
+  },
+  "data" : {
+    "noData": "No data"
+  }
+}
