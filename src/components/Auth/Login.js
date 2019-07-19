@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import isEmpty from 'lodash/isEmpty';
-import i18n from '../../i18n';
 import { connect } from 'react-redux';
+
+import i18n from '../../i18n';
 import { clearErrors, requestLogIn } from '../../redux/actions/authActions';
+import ErrorBox from '../../common/ErrorBox';
 
 class LoginContainer extends Component {
 	state = {
@@ -28,20 +29,11 @@ class LoginContainer extends Component {
 		this.props.login({ email, password });
 	};
 
-	renderError = field => {
-		const { errors } = this.props;
-		if (!isEmpty(errors) && errors[field]) {
-			return <span>{errors[field]}</span>;
-		}
-
-		return null;
-	};
-
 	renderSubmitButton() {
 		const { isFetching } = this.props;
 
 		return (
-			<button onClick={this.handleSubmit}>
+			<button onClick={this.handleSubmit} disabled={isFetching}>
 				{isFetching ? 'Loading' : i18n.t('auth.signIn')}
 			</button>
 		);
@@ -53,6 +45,7 @@ class LoginContainer extends Component {
 			<div>
 				<form>
 					<h1>Log in</h1>
+					<ErrorBox error={this.props.errors} field="" />
 					<div>
 						<label>Email</label>
 						<div>
@@ -63,11 +56,7 @@ class LoginContainer extends Component {
 								value={email}
 							/>
 						</div>
-						<div>
-							<p>
-								{this.renderError('email')}
-							</p>
-						</div>
+						<ErrorBox error={this.props.errors} field="email" />
 					</div>
 					<div>
 						<label>Password</label>
@@ -79,11 +68,7 @@ class LoginContainer extends Component {
 								value={password}
 							/>
 						</div>
-						<div>
-							<p>
-								{this.renderError('password')}
-							</p>
-						</div>
+						<ErrorBox error={this.props.errors} field="password" />
 					</div>
 					<div>
 						{this.renderSubmitButton()}

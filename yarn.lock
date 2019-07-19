@@ -8258,6 +8258,11 @@ recursive-readdir@2.2.2:
   dependencies:
     minimatch "3.0.4"
 
+redux-define@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/redux-define/-/redux-define-1.1.1.tgz#98f97bfa45219a1d646a76b8512f421a96c289bf"
+  integrity sha1-mPl7+kUhmh1kana4US9CGpbCib8=
+
 redux-saga@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-1.0.2.tgz#0599703f975438f1b2f9d2b9a965ec58f0fdfcd7"

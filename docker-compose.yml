@@ -1,0 +1,28 @@
+version: "3"
+services:
+  react:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react
+    volumes:
+      - .:/app
+
+  nginx:
+    build: 
+      context: .
+      dockerfile: Dockerfile-nginx
+    container_name: react-nginx
+    depends_on:
+      - react
+    environment:
+      - NGINX_SERVER_NAME=localhost
+      - REACT_HOST=react
+      - REACT_PORT=3000
+      - NGINX_MAX_BODY=100M
+    ports:
+      - 3000:80
+    volumes:
+      - ./src:/app
+      - ./docker/vhost.template:/etc/nginx/conf.d/vhost.template
+

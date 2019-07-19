@@ -1,15 +1,13 @@
 import {
 	AUTH_STOP_FETCHING_ACTION,
-	CLEAR_LOGIN_ERRORS_ACTION,
 	LOGIN_ACTION,
 	LOGOUT_ACTION,
-	REQUEST_LOGIN_ACTION,
 	REQUEST_LOGOUT_ACTION
 } from '../../constants/authConstants';
 
 export function requestLogIn(payload) {
 	return {
-		type: REQUEST_LOGIN_ACTION,
+		type: LOGIN_ACTION.REQUEST,
 		payload
 	};
 }
@@ -34,7 +32,7 @@ export function logout() {
 
 export function clearErrors() {
 	return {
-		type: CLEAR_LOGIN_ERRORS_ACTION
+		type: LOGIN_ACTION.CLEAR_ERRORS,
 	};
 }
 

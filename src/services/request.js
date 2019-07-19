@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { LOCAL_STORAGE_TOKEN } from '../constants/constants';
 
-export const BASE_API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
+export const BASE_API_ENDPOINT = process.env.REACT_APP_BASE_URL;
 
 const chrome = global.chrome;
 
