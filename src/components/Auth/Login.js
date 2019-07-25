@@ -12,6 +12,21 @@ class LoginContainer extends Component {
 		error: '',
 	};
 
+	componentDidMount() {
+		const { isAuthenticated, history } = this.props;
+		if (isAuthenticated) {
+			history.replace('/home');
+		}
+
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		const { isAuthenticated, history } = this.props;
+		if (prevProps.isAuthenticated !== isAuthenticated && isAuthenticated) {
+			history.push('/home');
+		}
+	}
+
 	handleChange = e => {
 		const { name, value } = e.target;
 		this.setState(prevState => ({
@@ -82,6 +97,7 @@ class LoginContainer extends Component {
 const mapStateToProps = state => ({
 	errors: state.auth.errors,
 	isFetching: state.auth.isFetching,
+	isAuthenticated: state.auth.authenticated,
 });
 
 const mapDispatchToProps = {

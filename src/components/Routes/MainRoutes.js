@@ -13,11 +13,11 @@ const renderComponent = (Component, authRequired, isAuthenticated, props) =>
 const MainRoutes = ({isAuthenticated, routes, ...props}) => {
 	return (
 		<Switch>
-			{routes.map(route => {
+			{routes.map((route, index) => {
 				const {exact, path, component, authRequired, additionalProps} = route;
 				return (
 					<Route
-						key={path}
+						key={index}
 						exact={exact}
 						path={path}
 						render={routerProps =>

@@ -9,6 +9,7 @@
     "signUp": "Sign up",
     "signIn": "Sign in",
     "enterName": "Enter your name",
+    "enterLastName": "Enter your last name",
     "enterEmail": "Enter your email",
     "enterPass": "Enter your password",
     "changePass": "Change password",
@@ -16,6 +17,7 @@
     "enterNewPass": "Enter new password",
     "confirmPass": "Confirm password",
     "passwordSuccessfullyChanged": "Password successfully changed",
+    "passwordMustMatch": "Passwords must match",
     "googleSignIn": "Google",
     "facebookSignIn": "Facebook"
   },

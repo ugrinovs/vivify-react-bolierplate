@@ -1,9 +1,7 @@
 import axios from 'axios';
-import { LOCAL_STORAGE_TOKEN } from '../constants/constants';
+import {LOCAL_STORAGE_TOKEN} from '../constants/constants';
 
 export const BASE_API_ENDPOINT = process.env.REACT_APP_BASE_URL;
-
-const chrome = global.chrome;
 
 const defaultConfig = {
 	// Here you can add boilerplate configuration
@@ -25,22 +23,18 @@ function request(config = defaultConfig) {
 	}
 
 	function getToken() {
-		return new Promise(resolve => {
-			chrome.storage.sync.get([LOCAL_STORAGE_TOKEN], items => {
-				resolve(items[LOCAL_STORAGE_TOKEN]);
-			});
-		});
+		return localStorage.getItem(LOCAL_STORAGE_TOKEN);
 	}
 
 	function attachTokenHeader(token) {
 		instance.defaults.headers.Authorization = `Bearer ${token}`;
 	}
 
-	async function addAuthToken() {
+	function addAuthToken() {
 		const auth = instance.defaults.headers.Authorization;
 
 		if (!auth) {
-			const token = await getToken();
+			const token = getToken();
 			instance.defaults.headers.Authorization = `Bearer ${token}`;
 		}
 
@@ -48,12 +42,12 @@ function request(config = defaultConfig) {
 	}
 
 	function setAuthToken(token) {
-		chrome.storage.sync.set({ [LOCAL_STORAGE_TOKEN]: token });
+		localStorage.setItem(LOCAL_STORAGE_TOKEN, token);
 		instance.defaults.headers.Authorization = `Bearer ${token}`;
 	}
 
 	function removeToken() {
-		chrome.storage.sync.remove(LOCAL_STORAGE_TOKEN);
+		localStorage.removeItem(LOCAL_STORAGE_TOKEN);
 		instance.defaults.headers.Authorization = undefined;
 	}
 

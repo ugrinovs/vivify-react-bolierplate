@@ -15,7 +15,7 @@ const initialState = {
 export default createReducer(
 	{
 		[LOGIN_ACTION.REQUEST]: userLoginRequest,
-		[LOGIN_ACTION]: userLogin,
+		[LOGIN_ACTION.SUCCESS]: userLogin,
 		[LOGIN_ACTION.ERROR]: updateErrors,
 		[LOGOUT_ACTION]: userLogout,
 		[LOGIN_ACTION.CLEAR_ERRORS]: clearErrors,

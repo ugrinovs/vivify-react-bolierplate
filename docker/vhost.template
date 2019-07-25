@@ -14,5 +14,13 @@ server {
 		proxy_set_header X-Forwarded-Host $server_name;
 		proxy_set_header X-Forwarded-Proto https;
 	}
+
+  location /sockjs-node/ {
+    proxy_pass http://${REACT_HOST}:${REACT_PORT};
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_set_header x-forwarded-proto https;
+  }
 }
 
