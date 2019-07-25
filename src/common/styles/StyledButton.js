@@ -12,7 +12,7 @@ export default styled.button`
 	
 	&:hover {
 		background-color: #fff;
-	box-shadow: 0 0 0 2px #282c34 inset, 0 0 0 2px #fff;
-	color: #282c34;
+		box-shadow: 0 0 0 2px #282c34 inset, 0 0 0 2px #fff;
+		color: #282c34;
 	}
 `;
