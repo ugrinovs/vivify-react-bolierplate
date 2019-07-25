@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import i18n from '../../i18n';
 import { clearErrors, requestLogIn } from '../../redux/actions/authActions';
 import ErrorBox from '../../common/ErrorBox';
+import StyledForm from '../../common/styles/StyledForm';
+import StyledInputWrapper from '../../common/styles/StyledInputWrapper';
+import StyledButton from '../../common/styles/StyledButton';
 
 class LoginContainer extends Component {
 	state = {
@@ -48,20 +51,20 @@ class LoginContainer extends Component {
 		const { isFetching } = this.props;
 
 		return (
-			<button onClick={this.handleSubmit} disabled={isFetching}>
+			<StyledButton onClick={this.handleSubmit} disabled={isFetching}>
 				{isFetching ? 'Loading' : i18n.t('auth.signIn')}
-			</button>
+			</StyledButton>
 		);
 	}
 
 	render() {
 		const { email, password } = this.state;
 		return (
-			<div>
+			<StyledForm>
 				<form>
 					<h1>Log in</h1>
 					<ErrorBox error={this.props.errors} field="" />
-					<div>
+					<StyledInputWrapper>
 						<label>Email</label>
 						<div>
 							<input
@@ -72,8 +75,8 @@ class LoginContainer extends Component {
 							/>
 						</div>
 						<ErrorBox error={this.props.errors} field="email" />
-					</div>
-					<div>
+					</StyledInputWrapper>
+					<StyledInputWrapper>
 						<label>Password</label>
 						<div>
 							<input
@@ -84,12 +87,12 @@ class LoginContainer extends Component {
 							/>
 						</div>
 						<ErrorBox error={this.props.errors} field="password" />
-					</div>
+					</StyledInputWrapper>
 					<div>
 						{this.renderSubmitButton()}
 					</div>
 				</form>
-			</div>
+			</StyledForm>
 		);
 	}
 }

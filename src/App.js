@@ -12,8 +12,10 @@ function App({ isAuthenticated }) {
 	return (
 		<Bootstrap>
 			<Router history={history}>
+				<div>
 				<Navbar routes={mainRoutes} />
 				<MainRoutes routes={mainRoutes} isAuthenticated={isAuthenticated} />
+				</div>
 			</Router>
 		</Bootstrap>
 	);
