@@ -65,7 +65,7 @@ class LoginContainer extends Component {
 					<h1>Log in</h1>
 					<ErrorBox error={this.props.errors} field="" />
 					<StyledInputWrapper>
-						<label>Email</label>
+						<label>{i18n.t('auth.enterEmail')}</label>
 						<div>
 							<input
 								name="email"
@@ -77,7 +77,7 @@ class LoginContainer extends Component {
 						<ErrorBox error={this.props.errors} field="email" />
 					</StyledInputWrapper>
 					<StyledInputWrapper>
-						<label>Password</label>
+						<label>{i18n.t('auth.enterPass')}</label>
 						<div>
 							<input
 								name="password"

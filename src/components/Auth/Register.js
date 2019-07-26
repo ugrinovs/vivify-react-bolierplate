@@ -81,7 +81,7 @@ class Register extends Component {
 					<label htmlFor={REPEAT_PASSWORD}>{i18n.t('auth.confirmPass')}: </label>
 					<input name={REPEAT_PASSWORD} onChange={this.handleChange} />
 				</StyledInputWrapper>
-				<StyledButton onClick={this.handleSubmit}>Register</StyledButton>
+				<StyledButton onClick={this.handleSubmit}>{i18n.t('auth.signUp')}</StyledButton>
 			</StyledForm>
 		);
 	}
