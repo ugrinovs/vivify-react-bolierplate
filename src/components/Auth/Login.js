@@ -23,7 +23,7 @@ class LoginContainer extends Component {
 
 	}
 
-	componentDidUpdate(prevProps, prevState) {
+	componentDidUpdate(prevProps) {
 		const { isAuthenticated, history } = this.props;
 		if (prevProps.isAuthenticated !== isAuthenticated && isAuthenticated) {
 			history.push('/home');
