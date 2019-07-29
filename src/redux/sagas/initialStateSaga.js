@@ -6,10 +6,9 @@ import { successInitialState } from '../actions/initialStateActions';
 /**
  * Loads data that should be ready before application is shown.
  */
-function* fetchInitialState() {
+export function* fetchInitialState() {
 	try {
 		yield put({type: LOGIN_ACTION.AUTHORIZE});
-
 		yield put(successInitialState());
 	} catch (e) {
 		yield put(INITIAL_STATE.ERROR, e);
