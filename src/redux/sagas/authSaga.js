@@ -20,9 +20,7 @@ export function* logIn({ payload }) {
 
 		const { data } = response;
 		if (data) {
-			request.setAuthToken(data.access_token);
-
-			yield put({ type: LOGIN_ACTION.SUCCESS, payload: data });
+			yield put(authenticateUser());
 		}
 	} catch (e) {
 		const { data, statusText } = e.response;
@@ -40,14 +38,9 @@ export function* logIn({ payload }) {
 	}
 }
 
-function* me() {
+export function* me() {
 	try {
-		const token = request.getToken();
-		if (!token) {
-			return;
-		}
-
-		yield call(authService.me, token);
+		yield call(authService.me);
 		yield put(authenticateUser());
 	} catch (e) {
 		yield put({ type: LOGIN_ACTION.ERROR, payload: e });
@@ -55,8 +48,12 @@ function* me() {
 }
 
 export function* logOut() {
-	request.removeToken();
-	yield put(logout());
+	try {
+		yield call(authService.logout);
+		yield put(logout());
+	} catch (e) {
+		yield put({ type: LOGIN_ACTION.ERROR, payload: e });
+	}
 }
 
 export function* register({ payload }) {
