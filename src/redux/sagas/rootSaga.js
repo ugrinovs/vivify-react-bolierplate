@@ -3,5 +3,5 @@ import authSaga from './authSaga';
 import initialStateSaga from './initialStateSaga';
 
 export default function* rootSaga() {
-	yield all([authSaga(), initialStateSaga()]);
+  yield all([authSaga(), initialStateSaga()]);
 }

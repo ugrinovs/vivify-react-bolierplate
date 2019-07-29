@@ -3,15 +3,15 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import en from './locale/en';
 
 i18n.use(LanguageDetector).init({
-	resources: {
-		en: {
-			translations: en
-		}
-	},
+  resources: {
+    en: {
+      translations: en,
+    },
+  },
 
-	fallbackLng: 'en',
-	ns: ['translations'],
-	defaultNS: 'translations'
+  fallbackLng: 'en',
+  ns: ['translations'],
+  defaultNS: 'translations',
 });
 
 export default i18n;

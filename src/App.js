@@ -9,20 +9,20 @@ import Bootstrap from './Bootstrap';
 import { connect } from 'react-redux';
 
 function App({ isAuthenticated }) {
-	return (
-		<Bootstrap>
-			<Router history={history}>
-				<div>
-				<Navbar routes={mainRoutes} />
-				<MainRoutes routes={mainRoutes} isAuthenticated={isAuthenticated} />
-				</div>
-			</Router>
-		</Bootstrap>
-	);
+  return (
+    <Bootstrap>
+      <Router history={history}>
+        <div>
+          <Navbar routes={mainRoutes} />
+          <MainRoutes routes={mainRoutes} isAuthenticated={isAuthenticated} />
+        </div>
+      </Router>
+    </Bootstrap>
+  );
 }
 
-const mapStateToProps = (state) => ({
-	isAuthenticated: state.auth.authenticated,
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.authenticated,
 });
 
 export default connect(mapStateToProps)(App);

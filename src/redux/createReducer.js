@@ -14,12 +14,12 @@
  * @param initialState state given to redux store on init.
  */
 export default function createReducer(handlers, initialState) {
-	return (state = initialState, action) => {
-		const reducer = handlers[action.type];
-		if (reducer) {
-			return reducer(state, action);
-		}
+  return (state = initialState, action) => {
+    const reducer = handlers[action.type];
+    if (reducer) {
+      return reducer(state, action);
+    }
 
-		return state;
-	};
+    return state;
+  };
 }
