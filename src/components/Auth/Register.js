@@ -62,31 +62,41 @@ class Register extends Component {
   render() {
     return (
       <StyledForm>
-        <StyledInputWrapper>
-          <label htmlFor={EMAIL}>{i18n.t('auth.enterEmail')}: </label>
-          <input name={EMAIL} onChange={this.handleChange} />
-        </StyledInputWrapper>
-        <StyledInputWrapper>
-          <label htmlFor={NAME}>{i18n.t('auth.enterName')}: </label>
-          <input name={NAME} onChange={this.handleChange} />
-        </StyledInputWrapper>
-        <StyledInputWrapper>
-          <label htmlFor={LAST_NAME}>{i18n.t('auth.enterLastName')}: </label>
-          <input name={LAST_NAME} onChange={this.handleChange} />
-        </StyledInputWrapper>
-        <StyledInputWrapper>
-          <label htmlFor={PASSWORD}>{i18n.t('auth.enterPass')}: </label>
-          <input name={PASSWORD} onChange={this.handleChange} />
-        </StyledInputWrapper>
-        <StyledInputWrapper>
-          <label htmlFor={REPEAT_PASSWORD}>
-            {i18n.t('auth.confirmPass')}:{' '}
-          </label>
-          <input name={REPEAT_PASSWORD} onChange={this.handleChange} />
-        </StyledInputWrapper>
-        <StyledButton onClick={this.handleSubmit}>
-          {i18n.t('auth.signUp')}
-        </StyledButton>
+        <form>
+          <StyledInputWrapper>
+            <label htmlFor={EMAIL}>{i18n.t('auth.enterEmail')}: </label>
+            <input name={EMAIL} onChange={this.handleChange} />
+          </StyledInputWrapper>
+          <StyledInputWrapper>
+            <label htmlFor={NAME}>{i18n.t('auth.enterName')}: </label>
+            <input name={NAME} onChange={this.handleChange} />
+          </StyledInputWrapper>
+          <StyledInputWrapper>
+            <label htmlFor={LAST_NAME}>{i18n.t('auth.enterLastName')}: </label>
+            <input name={LAST_NAME} onChange={this.handleChange} />
+          </StyledInputWrapper>
+          <StyledInputWrapper>
+            <label htmlFor={PASSWORD}>{i18n.t('auth.enterPass')}: </label>
+            <input
+              name={PASSWORD}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </StyledInputWrapper>
+          <StyledInputWrapper>
+            <label htmlFor={REPEAT_PASSWORD}>
+              {i18n.t('auth.confirmPass')}:{' '}
+            </label>
+            <input
+              name={REPEAT_PASSWORD}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </StyledInputWrapper>
+          <StyledButton onClick={this.handleSubmit}>
+            {i18n.t('auth.signUp')}
+          </StyledButton>
+        </form>
       </StyledForm>
     );
   }

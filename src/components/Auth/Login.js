@@ -44,8 +44,8 @@ class LoginContainer extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const { email, password, clearErrors, login } = this.state;
-
+    const { email, password } = this.state;
+    const { clearErrors, login } = this.props;
     clearErrors();
     login({ email, password });
   };
@@ -91,7 +91,7 @@ class LoginContainer extends Component {
             </div>
             <ErrorBox error={this.props.errors} field="password" />
           </StyledInputWrapper>
-          <div>{this.renderSubmitButton()}</div>
+          {this.renderSubmitButton()}
         </form>
       </StyledForm>
     );
