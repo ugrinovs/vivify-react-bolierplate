@@ -1,5 +1,4 @@
 import {
-  AUTH_STOP_FETCHING_ACTION,
   LOGIN_ACTION,
   LOGOUT_ACTION,
   REGISTER_ACTION,
@@ -16,12 +15,6 @@ export function requestLogIn(payload) {
 export function authenticateUser() {
   return {
     type: LOGIN_ACTION.SUCCESS,
-  };
-}
-
-export function checkToken() {
-  return {
-    type: LOGIN_ACTION.CHECK_TOKEN,
   };
 }
 
@@ -47,11 +40,5 @@ export function requestRegister(payload) {
 export function clearErrors() {
   return {
     type: LOGIN_ACTION.CLEAR_ERRORS,
-  };
-}
-
-export function authStopFetching() {
-  return {
-    type: AUTH_STOP_FETCHING_ACTION,
   };
 }

@@ -37,6 +37,7 @@ const RoutesComponent = ({ isAuthenticated, routes, ...props }) => {
 
 RoutesComponent.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
+  routes: PropTypes.array,
 };
 
 export default RoutesComponent;

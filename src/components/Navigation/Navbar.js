@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import AuthLink from '../Auth/AuthLink';
 import Logout from '../Auth/Logout';
@@ -65,6 +66,11 @@ const Navbar = ({ isAuthenticated, ...props }) => {
       </div>
     </StyledNav>
   );
+};
+
+Navbar.propTypes = {
+  isAuthenticated: PropTypes.bool,
+  history: PropTypes.object,
 };
 
 const mapStateToProps = state => ({

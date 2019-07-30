@@ -18,16 +18,8 @@ const defaultConfig = {
 function request(config = defaultConfig) {
   const instance = axios.create(config);
 
-  function addResponseInterceptors(onFulfilled, onRejected) {
-    instance.interceptors.response.use(onFulfilled, onRejected);
-  }
-
   function getToken() {
     return localStorage.getItem(LOCAL_STORAGE_TOKEN);
-  }
-
-  function attachTokenHeader(token) {
-    instance.defaults.headers.Authorization = `Bearer ${token}`;
   }
 
   function addAuthToken() {
@@ -57,8 +49,6 @@ function request(config = defaultConfig) {
     addAuthToken,
     setAuthToken,
     removeToken,
-    addResponseInterceptors,
-    attachTokenHeader,
   };
 }
 

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import i18n from '../../i18n';
-import { clearErrors, requestLogIn } from '../../redux/actions/authActions';
+import {
+  clearErrors as clearErrorsAction,
+  requestLogIn,
+} from '../../redux/actions/authActions';
 import ErrorBox from '../../common/ErrorBox';
 import StyledForm from '../../common/styles/StyledForm';
 import StyledInputWrapper from '../../common/styles/StyledInputWrapper';
@@ -40,10 +44,10 @@ class LoginContainer extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const { email, password } = this.state;
+    const { email, password, clearErrors, login } = this.state;
 
-    this.props.clearErrors();
-    this.props.login({ email, password });
+    clearErrors();
+    login({ email, password });
   };
 
   renderSubmitButton() {
@@ -94,6 +98,15 @@ class LoginContainer extends Component {
   }
 }
 
+LoginContainer.propTypes = {
+  errors: PropTypes.any,
+  isFetching: PropTypes.bool,
+  isAuthenticated: PropTypes.bool,
+  login: PropTypes.func,
+  clearErrors: PropTypes.func,
+  history: PropTypes.object,
+};
+
 const mapStateToProps = state => ({
   errors: state.auth.errors,
   isFetching: state.auth.isFetching,
@@ -102,7 +115,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   login: requestLogIn,
-  clearErrors,
+  clearErrors: clearErrorsAction,
 };
 
 export default connect(

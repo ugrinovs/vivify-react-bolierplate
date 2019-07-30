@@ -20,7 +20,7 @@ const Loader = styled.div`
   }
 `;
 
-export default (
+export default () => (
   <Overlay>
     <Loader />
   </Overlay>

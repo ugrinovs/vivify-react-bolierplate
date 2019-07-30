@@ -2,11 +2,10 @@ import { all, call, put, takeLatest } from 'redux-saga/effects';
 
 import {
   LOGIN_ACTION,
-  REQUEST_LOGOUT_ACTION,
   REGISTER_ACTION,
+  REQUEST_LOGOUT_ACTION,
 } from '../../constants/authConstants';
 import authService from '../../services/api/authService';
-import request from '../../services/request';
 import { authenticateUser, logout } from '../actions/authActions';
 import { extractFirstErrorEachField } from '../../utils/errors';
 import history from '../history';

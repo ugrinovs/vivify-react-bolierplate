@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import { requestLogOut } from '../../redux/actions/authActions';
 
 const Logout = ({ logout }) => {
@@ -7,6 +9,10 @@ const Logout = ({ logout }) => {
     logout();
   };
   return <button onClick={handleLogout}>Logout</button>;
+};
+
+Logout.propTypes = {
+  logout: PropTypes.func,
 };
 
 const mapDispatchToProps = {

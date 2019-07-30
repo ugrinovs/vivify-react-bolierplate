@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import Login from '../Auth/Login';
 import NoMatch from './NoMatch';
 
@@ -33,6 +35,11 @@ const MainRoutes = ({ isAuthenticated, routes, ...props }) => {
       <Route exact={false} component={NoMatch} />
     </Switch>
   );
+};
+
+MainRoutes.propTypes = {
+  isAuthenticated: PropTypes.bool,
+  routes: PropTypes.array,
 };
 
 export default MainRoutes;

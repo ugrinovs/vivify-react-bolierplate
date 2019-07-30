@@ -31,7 +31,7 @@ const mapDispatchToProps = {
 Bootstrap.propTypes = {
   initialStateLoaded: PropTypes.bool,
   fetchInitialState: PropTypes.func,
-  children: PropTypes.node,
+  children: PropTypes.any,
 };
 
 export default connect(

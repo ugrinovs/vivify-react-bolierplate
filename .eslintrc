@@ -8,9 +8,15 @@
   ],
   "plugins": ["import"],
   "rules": {
-    "import/order": "warn"
+    "import/order": "warn",
+    "react/display-name": "off",
+    "arrow-parens": "warn",
+    "comma-dangle": ["warn", "always-multiline"],
+    "import/namespace": "off"
   },
   "env": {
-    "jest": true
+    "jest": true,
+    "browser": true,
+    "node": true
   }
 }
