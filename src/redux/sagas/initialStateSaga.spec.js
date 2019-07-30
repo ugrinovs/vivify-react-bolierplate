@@ -1,7 +1,7 @@
 import { testSaga } from 'redux-saga-test-plan';
 import { LOGIN_ACTION } from '../../constants/authConstants';
-import { fetchInitialState } from './initialStateSaga';
 import { successInitialState } from '../actions/initialStateActions';
+import { fetchInitialState } from './initialStateSaga';
 
 describe('InitialStateSaga', () => {
   describe('fetchInitialState', () => {

@@ -3,10 +3,10 @@ import sinon from 'sinon';
 
 import history from '../history';
 import authService from '../../services/api/authService';
-import { logIn, logOut, me, register } from './authSaga';
 import { authenticateUser, logout } from '../actions/authActions';
 import { LOGIN_ACTION } from '../../constants/authConstants';
 import request from '../../services/request';
+import { logIn, logOut, me, register } from './authSaga';
 
 describe('AuthSaga', () => {
   const email = 'test@test.com';

@@ -1,9 +1,9 @@
-import reducer from './authReducer';
 import {
   AUTH_STOP_FETCHING_ACTION,
   LOGIN_ACTION,
   LOGOUT_ACTION,
 } from '../../constants/authConstants';
+import reducer from './authReducer';
 
 const initialStateMock = {
   isFetching: false,

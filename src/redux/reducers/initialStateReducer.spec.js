@@ -1,5 +1,5 @@
-import reducer from './initialStateReducer';
 import { INITIAL_STATE } from '../../constants/authConstants';
+import reducer from './initialStateReducer';
 
 const initialStateMock = {
   initialStateLoaded: false,

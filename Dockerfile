@@ -2,10 +2,10 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY ./entrypoint.sh /
 
-RUN yarn
+RUN chmod +x /entrypoint.sh
 
-COPY . .
+USER 1000:1000
 
-CMD ["yarn", "start"]
+CMD ["/entrypoint.sh"]

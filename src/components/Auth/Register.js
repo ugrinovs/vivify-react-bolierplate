@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import i18n from '../../i18n';
-import { connect } from 'react-redux';
 import { requestRegister } from '../../redux/actions/authActions';
 import StyledForm from '../../common/styles/StyledForm';
 import StyledInputWrapper from '../../common/styles/StyledInputWrapper';
@@ -90,6 +91,10 @@ class Register extends Component {
     );
   }
 }
+
+Register.propTypes = {
+  register: PropTypes.func,
+};
 
 const mapDispatchToProps = {
   register: requestRegister,

@@ -7,7 +7,6 @@
     "i18next": "^16.0.0",
     "i18next-browser-languagedetector": "^3.0.1",
     "lodash": "^4.17.11",
-    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
@@ -42,9 +41,12 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.1",
     "prettier": "^1.18.2",
-    "pretty-quick": "^1.11.1"
+    "pretty-quick": "^1.11.1",
+    "prop-types": "^15.7.2"
   },
   "husky": {
     "hooks": {

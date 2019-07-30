@@ -1,12 +1,13 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import history from './redux/history';
 import { mainRoutes } from './components/Routes/routes';
 import MainRoutes from './components/Routes/MainRoutes';
 import Navbar from './components/Navigation/Navbar';
 import Bootstrap from './Bootstrap';
-import { connect } from 'react-redux';
 
 function App({ isAuthenticated }) {
   return (
@@ -20,6 +21,10 @@ function App({ isAuthenticated }) {
     </Bootstrap>
   );
 }
+
+App.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+};
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.authenticated,

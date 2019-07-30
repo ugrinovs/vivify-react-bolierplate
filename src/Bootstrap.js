@@ -1,9 +1,14 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
 import { fetchInitialState } from './redux/actions/initialStateActions';
+import Loader from './common/Loader';
 
 class Bootstrap extends Component {
-  async componentWillMount() {
+  constructor(props) {
+    super(props);
+
     const { fetchInitialState } = this.props;
     fetchInitialState();
   }
@@ -11,7 +16,7 @@ class Bootstrap extends Component {
   render() {
     const { initialStateLoaded, children } = this.props;
 
-    return !initialStateLoaded ? null : children;
+    return !initialStateLoaded ? <Loader /> : children;
   }
 }
 
@@ -21,6 +26,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchInitialState,
+};
+
+Bootstrap.propTypes = {
+  initialStateLoaded: PropTypes.bool,
+  fetchInitialState: PropTypes.func,
+  children: PropTypes.node,
 };
 
 export default connect(

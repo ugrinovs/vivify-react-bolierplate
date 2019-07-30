@@ -5,10 +5,10 @@ import {
   TEST_PAGE_PATH,
 } from '../../constants/constants';
 import HomePage from '../../pages/HomePage';
-import NestedRoutes from './NestedRoutes';
 import TestPage from '../../pages/TestPage';
 import Login from '../Auth/Login';
 import Register from '../Auth/Register';
+import NestedRoutes from './NestedRoutes';
 
 export const nestedRoutes = [
   {
