@@ -14,14 +14,14 @@ const renderComponent = (Component, authRequired, isAuthenticated, props) =>
 const RoutesComponent = ({ isAuthenticated, routes, ...props }) => {
   return (
     <React.Fragment>
-      {routes.map(route => {
+      {routes.map((route) => {
         const { exact, path, component, authRequired, additionalProps } = route;
         return (
           <Route
             key={path}
             exact={exact}
             path={path}
-            render={routerProps =>
+            render={(routerProps) =>
               renderComponent(component, authRequired, isAuthenticated, {
                 ...routerProps,
                 ...additionalProps,

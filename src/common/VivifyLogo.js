@@ -4,10 +4,10 @@ import styled from 'styled-components';
 const Logo = styled.svg`
   width: 2rem;
   height: 2rem;
-  ${props => `cursor: (${props.cursor ? props.cursor : 'inherit'})`};
+  ${(props) => `cursor: (${props.cursor ? props.cursor : 'inherit'})`};
 `;
 
-export default props => (
+export default (props) => (
   <Logo {...props}>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.15 18" id="sign-vi">
       <path

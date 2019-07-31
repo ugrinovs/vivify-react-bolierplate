@@ -73,7 +73,7 @@ Navbar.propTypes = {
   history: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.authenticated,
 });
 

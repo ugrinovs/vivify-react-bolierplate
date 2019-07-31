@@ -8,10 +8,10 @@ const endpoints = {
   refresh: '/auth/refresh',
 };
 
-const logIn = credentials =>
+const logIn = (credentials) =>
   setRequestToken(request.post(endpoints.login, credentials));
 
-const register = data => request.post(endpoints.register, data);
+const register = (data) => request.post(endpoints.register, data);
 
 const me = () => setRequestToken(withToken());
 
@@ -22,21 +22,21 @@ const withToken = () => {
   return req(endpoints.me);
 };
 
-const setRequestToken = req =>
-  req.then(res => {
+const setRequestToken = (req) =>
+  req.then((res) => {
     if (res.data && res.data.access_token) {
       request.setAuthToken(res.data.access_token);
     }
     return res;
   });
 
-const removeRequestToken = req =>
-  req.then(res => {
+const removeRequestToken = (req) =>
+  req.then((res) => {
     request.removeToken();
     return res;
   });
 
-const attachRequestToken = req => {
+const attachRequestToken = (req) => {
   request.addAuthToken();
   return req;
 };

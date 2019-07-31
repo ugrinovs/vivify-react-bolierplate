@@ -27,7 +27,7 @@ class Register extends Component {
     const { password, repeatPassword } = this.state;
 
     if (password !== repeatPassword) {
-      this.setState(prevState => ({
+      this.setState((prevState) => ({
         ...prevState,
         errors: 'passwordMustMatch',
       }));
@@ -38,15 +38,15 @@ class Register extends Component {
     return true;
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const { first_name, last_name, email, password } = this.state;
     const { register } = this.props;

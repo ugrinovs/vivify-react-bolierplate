@@ -33,15 +33,15 @@ class LoginContainer extends Component {
     }
   }
 
-  handleChange = e => {
+  handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     const { email, password } = this.state;
@@ -107,7 +107,7 @@ LoginContainer.propTypes = {
   history: PropTypes.object,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   errors: state.auth.errors,
   isFetching: state.auth.isFetching,
   isAuthenticated: state.auth.authenticated,

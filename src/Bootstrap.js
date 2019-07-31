@@ -20,7 +20,7 @@ class Bootstrap extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   initialStateLoaded: state.initialState.initialStateLoaded,
 });
 

@@ -22,7 +22,7 @@ const MainRoutes = ({ isAuthenticated, routes, ...props }) => {
             key={index}
             exact={exact}
             path={path}
-            render={routerProps =>
+            render={(routerProps) =>
               renderComponent(component, authRequired, isAuthenticated, {
                 ...routerProps,
                 ...additionalProps,
